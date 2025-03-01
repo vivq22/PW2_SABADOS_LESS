@@ -1,0 +1,80 @@
+header {
+    background-color: @primary-bg-color;
+    color: @primary-text-color;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    @media (min-width: #breaks[tablet]) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        
+    }
+    div {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding:0.25rem 1rem;
+        h1 {
+            margin:0px;
+            font-size: 1.2rem;
+            padding: 0.25rem 0.5rem;
+        }
+        img {
+            display: block;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            padding: 0px;
+            box-shadow: 1px 1px 3px @primary-bg-color-super-dark;
+        }
+    }
+    nav {
+        margin-right: 0rem;
+        flex: 1;
+        @media (min-width: #breaks[tablet]) {
+            margin-right: 1rem;
+            flex: 0;
+            width: auto;
+        }
+        ul {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap:0.75rem;
+            padding:0px;
+            flex-direction: column;
+            @media(min-width: #breaks[tablet]) {
+                flex-direction: row;
+            }
+            li {
+                width: 100%;
+                @media(min-width: #breaks[tablet]) {
+                    width: auto;
+                }
+                a {
+                    display: block;
+                    padding: 0.5rem 1rem;
+                    text-decoration: none;
+                    color: @primary-text-color;
+                    transition: all 0.3s ease-in;
+                    width: 100%;
+                    &:hover { // Hace referencia al elemento que lo contiene el &
+                        background-color: @primary-bg-color-light;
+                        color: @secondary-text-color;
+                        transition: all 0.3s ease-in;
+                        text-decoration: underline;
+                    }
+
+                    @media(min-width: #breaks[tablet]) {
+                        width: auto;
+                        display: inline-block;
+
+                    }
+                }
+            }
+
+        }
+    }
+
+}
